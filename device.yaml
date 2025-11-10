@@ -1,0 +1,26 @@
+esphome:
+  name: my-esp32-device
+  platform: ESP32
+  board: nodemcu-32s
+
+wifi:
+  ssid: "${ssid}"
+  password: "${password}"
+
+api:
+  encryption:
+    key: "${api_encryption_key}"
+
+ota:
+  password: "${ota_password}"
+
+logger:
+  level: DEBUG
+
+web_server:
+  port: 80
+
+sensor:
+  - platform: wifi_signal
+    name: "WiFi Signal"
+    update_interval: 60s
